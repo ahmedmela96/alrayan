@@ -1,0 +1,298 @@
+:root {
+  --primary: #da2f2f;
+  --accent: #f38b1f;
+  --bg: #fff8f2;
+  --text: #252525;
+  --muted: #676767;
+  --card: #ffffff;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.7;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin-inline: auto;
+}
+
+.site-header {
+  min-height: 82vh;
+  background: linear-gradient(135deg, #fff5ef, #fff),
+    radial-gradient(circle at 85% 20%, rgba(243, 139, 31, 0.2), transparent 45%);
+  border-bottom: 1px solid #f0e6e2;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(140deg, var(--primary), var(--accent));
+  position: relative;
+}
+
+.logo-mark::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  top: 13px;
+  left: 13px;
+}
+
+.brand strong {
+  display: block;
+  font-size: 1.15rem;
+}
+
+.brand small {
+  color: var(--muted);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+}
+
+.hero {
+  padding: 5rem 0 4rem;
+}
+
+.label {
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0.4rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  max-width: 800px;
+}
+
+.hero p {
+  max-width: 750px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+  padding: 0.75rem 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(140deg, var(--primary), #c42727);
+  color: #fff;
+}
+
+.btn-outline {
+  border-color: var(--accent);
+  color: #9a5309;
+  background: #fff;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: var(--bg);
+}
+
+.section-head {
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-col {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.four-col {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #f1e8e1;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.service,
+.product {
+  transition: transform 0.25s ease;
+}
+
+.service:hover,
+.product:hover {
+  transform: translateY(-4px);
+}
+
+.stat {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #f1e8e1;
+  border-radius: 0.9rem;
+  padding: 1.2rem;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.9rem;
+  color: var(--primary);
+}
+
+.contact-card ul {
+  margin: 0;
+  padding-right: 1rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  font: inherit;
+  border: 1px solid #e8ddd6;
+  border-radius: 0.6rem;
+  padding: 0.7rem;
+}
+
+.footer {
+  background: #1f1f1f;
+  color: #f4f4f4;
+  padding: 1rem 0;
+}
+
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer a {
+  color: #ffd9a9;
+  text-decoration: none;
+}
+
+@media (max-width: 920px) {
+  .three-col,
+  .four-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 72px;
+    inset-inline: 4%;
+    background: #fff;
+    border: 1px solid #ebdfd8;
+    border-radius: 0.9rem;
+    padding: 1rem;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .two-col,
+  .three-col,
+  .four-col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .footer-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
